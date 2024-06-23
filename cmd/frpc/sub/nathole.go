@@ -31,7 +31,7 @@ var (
 )
 
 func init() {
-	rootCmd.AddCommand(natholeCmd)
+	RootCmd.AddCommand(natholeCmd)
 	natholeCmd.AddCommand(natholeDiscoveryCmd)
 
 	natholeCmd.PersistentFlags().StringVarP(&natHoleSTUNServer, "nat_hole_stun_server", "", "", "STUN server address for nathole")

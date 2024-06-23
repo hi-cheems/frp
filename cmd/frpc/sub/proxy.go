@@ -64,7 +64,7 @@ func init() {
 			config.RegisterVisitorFlags(visitorCmd, vc)
 			cmd.AddCommand(visitorCmd)
 		}
-		rootCmd.AddCommand(cmd)
+		RootCmd.AddCommand(cmd)
 	}
 }
 

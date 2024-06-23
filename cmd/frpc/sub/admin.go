@@ -28,19 +28,19 @@ import (
 )
 
 func init() {
-	rootCmd.AddCommand(NewAdminCommand(
+	RootCmd.AddCommand(NewAdminCommand(
 		"reload",
 		"Hot-Reload frpc configuration",
 		ReloadHandler,
 	))
 
-	rootCmd.AddCommand(NewAdminCommand(
+	RootCmd.AddCommand(NewAdminCommand(
 		"status",
 		"Overview of all proxies status",
 		StatusHandler,
 	))
 
-	rootCmd.AddCommand(NewAdminCommand(
+	RootCmd.AddCommand(NewAdminCommand(
 		"stop",
 		"Stop the running frpc",
 		StopHandler,

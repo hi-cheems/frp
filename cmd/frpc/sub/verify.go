@@ -25,7 +25,7 @@ import (
 )
 
 func init() {
-	rootCmd.AddCommand(verifyCmd)
+	RootCmd.AddCommand(verifyCmd)
 }
 
 var verifyCmd = &cobra.Command{

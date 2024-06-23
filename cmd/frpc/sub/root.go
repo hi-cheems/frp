@@ -43,13 +43,13 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "./frpc.ini", "config file of frpc")
-	rootCmd.PersistentFlags().StringVarP(&cfgDir, "config_dir", "", "", "config directory, run one frpc service for each file in config directory")
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of frpc")
-	rootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", true, "strict config parsing mode, unknown fields will cause an errors")
+	RootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "./frpc.ini", "config file of frpc")
+	RootCmd.PersistentFlags().StringVarP(&cfgDir, "config_dir", "", "", "config directory, run one frpc service for each file in config directory")
+	RootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of frpc")
+	RootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", true, "strict config parsing mode, unknown fields will cause an errors")
 }
 
-var rootCmd = &cobra.Command{
+var RootCmd = &cobra.Command{
 	Use:   "frpc",
 	Short: "frpc is the client of frp (https://github.com/fatedier/frp)",
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -97,8 +97,8 @@ func runMultipleClients(cfgDir string) error {
 }
 
 func Execute() {
-	rootCmd.SetGlobalNormalizationFunc(config.WordSepNormalizeFunc)
-	if err := rootCmd.Execute(); err != nil {
+	RootCmd.SetGlobalNormalizationFunc(config.WordSepNormalizeFunc)
+	if err := RootCmd.Execute(); err != nil {
 		os.Exit(1)
 	}
 }
