@@ -49,29 +49,33 @@ func init() {
 	RootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", true, "strict config parsing mode, unknown fields will cause an errors")
 }
 
+var StartFunc = func(cfgFile, cfgDir string, showVersion bool) error {
+	if showVersion {
+		fmt.Println(version.Full())
+		return nil
+	}
+
+	// If cfgDir is not empty, run multiple frpc service for each config file in cfgDir.
+	// Note that it's only designed for testing. It's not guaranteed to be stable.
+	if cfgDir != "" {
+		_ = runMultipleClients(cfgDir)
+		return nil
+	}
+
+	// Do not show command usage here.
+	err := runClient(cfgFile)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	return nil
+}
+
 var RootCmd = &cobra.Command{
 	Use:   "frpc",
 	Short: "frpc is the client of frp (https://github.com/hi-cheems/frp)",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		if showVersion {
-			fmt.Println(version.Full())
-			return nil
-		}
-
-		// If cfgDir is not empty, run multiple frpc service for each config file in cfgDir.
-		// Note that it's only designed for testing. It's not guaranteed to be stable.
-		if cfgDir != "" {
-			_ = runMultipleClients(cfgDir)
-			return nil
-		}
-
-		// Do not show command usage here.
-		err := runClient(cfgFile)
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-		return nil
+		return StartFunc(cfgFile, cfgDir, showVersion)
 	},
 }
 
