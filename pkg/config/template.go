@@ -17,7 +17,7 @@ package config
 import (
 	"fmt"
 
-	"github.com/fatedier/frp/pkg/util/util"
+	"github.com/hi-cheems/frp/pkg/util/util"
 )
 
 type NumberPair struct {

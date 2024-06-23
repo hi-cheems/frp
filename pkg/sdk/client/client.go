@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/fatedier/frp/client"
-	httppkg "github.com/fatedier/frp/pkg/util/http"
+	"github.com/hi-cheems/frp/client"
+	httppkg "github.com/hi-cheems/frp/pkg/util/http"
 )
 
 type Client struct {

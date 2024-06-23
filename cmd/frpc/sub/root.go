@@ -27,12 +27,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fatedier/frp/client"
-	"github.com/fatedier/frp/pkg/config"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/config/v1/validation"
-	"github.com/fatedier/frp/pkg/util/log"
-	"github.com/fatedier/frp/pkg/util/version"
+	"github.com/hi-cheems/frp/client"
+	"github.com/hi-cheems/frp/pkg/config"
+	v1 "github.com/hi-cheems/frp/pkg/config/v1"
+	"github.com/hi-cheems/frp/pkg/config/v1/validation"
+	"github.com/hi-cheems/frp/pkg/util/log"
+	"github.com/hi-cheems/frp/pkg/util/version"
 )
 
 var (
@@ -51,7 +51,7 @@ func init() {
 
 var RootCmd = &cobra.Command{
 	Use:   "frpc",
-	Short: "frpc is the client of frp (https://github.com/fatedier/frp)",
+	Short: "frpc is the client of frp (https://github.com/hi-cheems/frp)",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version.Full())

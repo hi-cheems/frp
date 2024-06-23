@@ -27,16 +27,16 @@ import (
 	"github.com/fatedier/golib/crypto"
 	"github.com/samber/lo"
 
-	"github.com/fatedier/frp/client/proxy"
-	"github.com/fatedier/frp/pkg/auth"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	httppkg "github.com/fatedier/frp/pkg/util/http"
-	"github.com/fatedier/frp/pkg/util/log"
-	netpkg "github.com/fatedier/frp/pkg/util/net"
-	"github.com/fatedier/frp/pkg/util/version"
-	"github.com/fatedier/frp/pkg/util/wait"
-	"github.com/fatedier/frp/pkg/util/xlog"
+	"github.com/hi-cheems/frp/client/proxy"
+	"github.com/hi-cheems/frp/pkg/auth"
+	v1 "github.com/hi-cheems/frp/pkg/config/v1"
+	"github.com/hi-cheems/frp/pkg/msg"
+	httppkg "github.com/hi-cheems/frp/pkg/util/http"
+	"github.com/hi-cheems/frp/pkg/util/log"
+	netpkg "github.com/hi-cheems/frp/pkg/util/net"
+	"github.com/hi-cheems/frp/pkg/util/version"
+	"github.com/hi-cheems/frp/pkg/util/wait"
+	"github.com/hi-cheems/frp/pkg/util/xlog"
 )
 
 func init() {

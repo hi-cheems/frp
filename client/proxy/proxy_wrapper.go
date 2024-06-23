@@ -25,12 +25,12 @@ import (
 
 	"github.com/fatedier/golib/errors"
 
-	"github.com/fatedier/frp/client/event"
-	"github.com/fatedier/frp/client/health"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	"github.com/fatedier/frp/pkg/transport"
-	"github.com/fatedier/frp/pkg/util/xlog"
+	"github.com/hi-cheems/frp/client/event"
+	"github.com/hi-cheems/frp/client/health"
+	v1 "github.com/hi-cheems/frp/pkg/config/v1"
+	"github.com/hi-cheems/frp/pkg/msg"
+	"github.com/hi-cheems/frp/pkg/transport"
+	"github.com/hi-cheems/frp/pkg/util/xlog"
 )
 
 const (
